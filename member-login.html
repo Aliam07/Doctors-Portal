@@ -5,10 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Login</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateMemberLogin() {
+            const username = document.getElementById('memberUsername').value;
+            const password = document.getElementById('memberPassword').value;
+
+            if (username === 'abutt4@student.gsu.edu' && password === 'Ali1234567') {
+                window.location.href = 'create-doctor.html';
+                return false;
+            } else {
+                alert('Invalid credentials. Please try again.');
+                return false;
+            }
+        }
+
+        function logout() {
+            // Clear session storage or cookies here if used
+            // sessionStorage.clear(); // Uncomment if using sessionStorage
+            // Clear cookies if necessary
+            document.cookie.split(";").forEach((c) => {
+                document.cookie = c
+                    .replace(/^ +/, "")
+                    .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="logo">Doctor Portal</div>
+        <a href="#" class="logout-button" onclick="logout()">Logout</a> <!-- Added logout button -->
     </header>
     <div class="container">
         <div class="login-box">
@@ -32,19 +59,5 @@
     <footer>
         <p><a href="index.html">Login Page</a> | <a href="checklist.html">Checklist Page</a> | <a href="site-description.html">Site Description Page</a> | <a href="about-us.html">About Us Page</a> | <a href="index.html">Homepage</a></p>
     </footer>
-    <script>
-        function validateMemberLogin() {
-            const username = document.getElementById('memberUsername').value;
-            const password = document.getElementById('memberPassword').value;
-
-            if (username === 'abutt4@student.gsu.edu' && password === 'Ali1234567') {
-                window.location.href = 'create-doctor.html';
-                return false;
-            } else {
-                alert('Invalid credentials. Please try again.');
-                return false;
-            }
-        }
-    </script>
 </body>
 </html>
