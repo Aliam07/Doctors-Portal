@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Doctor Portal</div>
+    </header>
+    <div class="container">
+        <div class="login-box">
+            <h2>Welcome to Doctor Portal</h2>
+            <p>This site allows users to find and manage doctor information.</p>
+            <p>Use the login page to access the portal and search for doctors based on their specialty and location.</p>
+            <h2>Login</h2>
+            <p>Log in with your account credentials.</p>
+            <form id="loginForm" onsubmit="return validateUserLogin()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <a href="member-login.html" class="member-login-link">Member Login</a>
+        </div>
+    </div>
+    <footer>
+        <p><a href="checklist.html">Checklist Page</a> | <a href="site-description.html">Site Description Page</a> | <a href="about-us.html">About Us Page</a> | <a href="index.html">Homepage</a></p>
+    </footer>
+    <script>
+        function validateUserLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'demouser' && password === 'ThisIsForWPClass') {
+                window.location.href = 'search.html';
+                return false;
+            } else {
+                alert('Invalid credentials. Please try again.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

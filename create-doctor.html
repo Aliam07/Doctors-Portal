@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Doctor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Doctor Portal</div>
+        <a href="logout.php" class="logout-button">Logout</a>
+    </header>
+    <div class="container">
+        <div class="create-doctor-box">
+            <h2>Create Doctor Profile</h2>
+            <form id="createDoctorForm" onsubmit="return createDoctor(event)">
+                <div class="form-group">
+                    <label for="doctorName">Name</label>
+                    <input type="text" id="doctorName" name="doctorname" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctorSpeciality">Speciality</label>
+                    <input type="text" id="doctorSpeciality" name="speciality" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Create Doctor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p><a href="index.html">Login Page</a> | <a href="checklist.html">Checklist Page</a> | <a href="site-description.html">Site Description Page</a> | <a href="about-us.html">About Us Page</a> | <a href="index.html">Homepage</a></p>
+    </footer>
+    <script>
+        async function createDoctor(event) {
+            event.preventDefault();
+            const doctorForm = document.getElementById('createDoctorForm');
+            const doctorData = {
+                doctorname: doctorForm.doctorname.value,
+                speciality: doctorForm.speciality.value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/doctor', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(doctorData)
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert('Doctor created successfully!');
+                    doctorForm.reset(); // Clear the form
+                } else {
+                    alert('Error creating doctor: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error creating doctor: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

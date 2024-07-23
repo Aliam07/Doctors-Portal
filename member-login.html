@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Doctor Portal</div>
+    </header>
+    <div class="container">
+        <div class="login-box">
+            <h2>Member Login</h2>
+            <p>Log in with your member credentials to create a new doctor profile.</p>
+            <form id="memberLoginForm" onsubmit="return validateMemberLogin()">
+                <div class="form-group">
+                    <label for="memberUsername">Username</label>
+                    <input type="text" id="memberUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="memberPassword">Password</label>
+                    <input type="password" id="memberPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p><a href="index.html">Login Page</a> | <a href="checklist.html">Checklist Page</a> | <a href="site-description.html">Site Description Page</a> | <a href="about-us.html">About Us Page</a> | <a href="index.html">Homepage</a></p>
+    </footer>
+    <script>
+        function validateMemberLogin() {
+            const username = document.getElementById('memberUsername').value;
+            const password = document.getElementById('memberPassword').value;
+
+            if (username === 'abutt4@student.gsu.edu' && password === 'Ali1234567') {
+                window.location.href = 'create-doctor.html';
+                return false;
+            } else {
+                alert('Invalid credentials. Please try again.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

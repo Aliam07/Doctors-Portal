@@ -1,0 +1,245 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #006400;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+header .logo, header .title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+header .logout-button, header .back-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    color: #006400;
+    padding: 10px 20px;
+    border: 2px solid #006400;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header .logout-button:hover, header .back-button:hover {
+    background-color: #006400;
+    color: white;
+}
+
+header .back-button {
+    left: 20px; /* Position the back button on the left side */
+}
+
+header .logout-button {
+    right: 20px;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.content-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    text-align: center;
+    width: 100%;
+}
+
+.login-box, .search-box, .results-box, .create-doctor-box, .checklist-box, .content-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    text-align: center;
+    width: 100%;
+}
+
+.login-box h2, .search-box h1, .results-box h1, .create-doctor-box h2, .checklist-box h2, .content-box h2 {
+    margin: 0 0 20px;
+}
+
+.login-box p, .search-box p, .results-box p, .create-doctor-box p, .content-box p {
+    margin: 10px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #006400;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Additions for search results */
+.results-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.result-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* Specific styles for the checklist page */
+.checklist-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.checklist-box ul ul {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+/* Specific styles for the site-description page */
+.site-description-box p,
+.site-description-box ul,
+.site-description-box h3 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.site-description-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.site-description-box ul ul {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+/* Specific styles for the create-doctor page */
+.create-doctor-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.create-doctor-box .form-group {
+    width: 80%;
+    max-width: 400px;
+}
+
+.create-doctor-box .form-group button {
+    width: auto;
+    align-self: flex-end;
+}
+
+/* Specific styles for the index page */
+.login-box .form-group button {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.member-login-link {
+    color: #006400;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.member-login-link:hover {
+    text-decoration: underline;
+}
+
+/* Specific styles for the search page */
+.search-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.search-box .form-group {
+    width: 80%;
+    max-width: 400px;
+}
+
+.search-box .form-group button {
+    width: auto;
+    align-self: center;
+}
