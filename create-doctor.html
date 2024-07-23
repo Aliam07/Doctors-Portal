@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Doctor</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function logout() {
+            // Clear session storage or cookies here if used
+            // sessionStorage.clear(); // Uncomment if using sessionStorage
+            // Clear cookies if necessary
+            document.cookie.split(";").forEach((c) => {
+                document.cookie = c
+                    .replace(/^ +/, "")
+                    .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="logo">Doctor Portal</div>
-        <a href="logout.php" class="logout-button">Logout</a>
+        <a href="#" class="logout-button" onclick="logout()">Logout</a> <!-- Updated logout button -->
     </header>
     <div class="container">
         <div class="create-doctor-box">
